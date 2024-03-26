@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Website</title>
+    
+    <style>
+       
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .banner{
+        width:100%;
+        height:100vh;
+       
+        background-image:linear-gradient(rgba(0,0,0,0.75),rgb(0,0,0,0.75)),url(https://img.freepik.com/free-photo/group-three-modern-architects_23-2147702101.jpg?size=626&ext=jpg&ga=GA1.1.1783882376.1710754427&semt=sph);
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position:center;
+        cursor:pointer;
+    }
+    header {
+        
+        
+        color: #fff;
+        padding: 5px;
+    }
+    
+    nav ul {
+        width:85%;
+        margin:auto;
+        list-style-type: none;
+        margin: 0;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding: 35px 0;
+    }
+    .content {
+    margin:20px auto;
+    font-weight:100;
+    line-height:25px;
+    text-align: center;}
+    .content h1{
+    margin:20px auto;
+    font-weight:100;
+    line-height:25px;
+    text-align: center;}
+   .content p{
+    margin:20px auto;
+    font-weight:100;
+    line-height:25px;
+    text-align: center;
+   } 
+   button{
+    width : 100px;
+    padding : 10px 0; 
+    text-align : center;
+    align-items:center;
+    margin:20px 10px; 
+    border-radius:25px;
+    font-weight:bold;
+    border:2px solid rgb(96, 96, 242);
+    background: transparent;
+    color:#fff;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+   }
+   span{
+    background : rgb(114, 114, 240);
+    height : 100%;
+    width: 0;
+    border-radius:25px;
+    position: absolute;
+    left: 0;
+    bottom:0;
+    z-index:-1;
+    transition :0.5s;
+   }
+   button:hover span{
+    width:100%;
+   }
+   button:hover{
+    border: none;
+   }
+    nav ul li {
+        list-style:none;
+        display: inline-block;
+        margin: 0 20px;
+        position:relative; 
+    }
+    nav ul li  a {
+      text-decoration: none;
+      color: #fff;
+      text-transform:uppercase;
+    }
+    nav ul li ::after {
+       content:'';
+       height:3px;
+       width:0;
+       
+       background:rgb(102, 102, 242);
+       position:absolute;
+       left:0;
+       bottom: -10px;
+       transition:0.5s;
+    }
+    nav ul li :hover::after {
+      
+       width:100%;
+     
+    }
+   
+    
+    main {
+        background-image: url('https://img.freepik.com/free-photo/medium-shot-woman-working-laptop_23-2149300643.jpg?size=626&ext=jpg&ga=GA1.1.1783882376.1710754427&semt=sph');
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position:center;
+        background-color:rgb(174, 246, 8);
+        padding: 20px;
+        
+    }
+   
+    
+    footer {
+        background-color:rgb(71, 115, 246);
+        color: #fff;
+        padding: 10px 20px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <div class="banner">
+       
+    
+    <header>
+        <h1><img src="data:image/jpegbase64,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;" width="50" height="50"> VeriTech Software IT Services  </h1>
+        <p>Welcome to veritech, where a dedicated team of professionals works<br>together to bring innovation creativity and experience to sofware industry get to know <br>   the individual who make our company thrive.</p>
+        <nav>
+            <ul> <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                
+            </ul>
+        </nav>
+        <div class="content">
+            <h2>For more updates</h2>
+            <div class="button">
+                 
+                <button type="button"><span></span><a href="https://www.linkedin.com/company/veritech-software-it-services-pvt-ltd/">linkdin</a></button>
+                <button type="button"><span></span><a href="https://www.instagram.com/veritech_sw?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instragram</a></button> </div>
+            </div>
+        </div>
+    </div>
+    </header>
+    
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Welcome to our company website. We specialize in providing...</p>
+            <p>Veritech Software Services is not just a company , we are a community of passionate dedicated to <Br>fostering the next genertion of developers.Our virtual internship program cover a divse range of <br>development fields.We take pride in providing hands-on experience , expert guidance , and <br>comprehension learning paths to prepare individual for successful careers in software development. </p>
+            <h3>Industry</h3>
+            <h4>IT Services and IT Consulting</h4>
+            <h3>Company-size</h3>
+            <h4>11-50 employees</h4>
+            <h4>93 associated members</h4>
+            <h3>Headquaters</h3>
+            <h4>Pune,Maharastra</h4> 
+            <h3>Type</h3>
+            <h4>Private Held</h4>  
+            <h3>Founded</h3>
+            <h4>2023</h4>
+        </section>
+        <section id="services">
+            <h2>Our Services</h2>
+            <ul>
+                <li><a href="leadership.html" target="attribute">Leadership/Management Team</a></li>
+                <li><a href="Development.html">Development team</a></li>
+                <li><a href="Sales.html">Sales and Marketing Team</a></li>
+                <li><a href="Remote">Remote workplace</a></li>
+            </ul>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: @veritech.com</p>
+            <p>Phone:  9371838418</p>
+            <p><a href="https://www.linkedin.com/company/veritech-software-it-services-pvt-ltd/">linkdin</a>  veritech-software-it-services-pvt-ltd</p>
+        </section>
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 VeriTech Software IT Services. All rights reserved.</p>
+    </footer>
+</body>
+</html>
